@@ -1,3 +1,12 @@
+const assertArraysEqual =  function(arr1, arr2) {
+  if(eqArrays(arr1, arr2)){
+    console.log(`👍👍👍 Assertion Passed: ${arr1} === ${arr2}`);
+  }else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
+  }
+} 
+
+
 const eqArrays = function(array1, array2) {
   if(array1.length !== array2.length) return false;
   else {
@@ -7,19 +16,6 @@ const eqArrays = function(array1, array2) {
   }
   return true
 }
-
-const without = function(source, itemsToRemove) {
-  let result = []
-  if(eqArrays(source, itemsToRemove)) return []
-  for(let i =0; i < source.length; i++){
-    if(source[i] !== itemsToRemove[i]) {
-      result.push(source[i])
-    }
-  }
-
-return result
-}
-
 
 const flatten = function(array) {
   let result = []
@@ -32,7 +28,12 @@ const flatten = function(array) {
       }
     }
   }
-  console.log(result)
+  return result
 } 
 
-flatten([1, 2, [3, 4], 5, [6]]) // => [1, 2, 3, 4, 5, 6]
+
+let unflattedArray = [1, 2, [3, 4], 5, [6]]
+newResult = flatten(unflattedArray) // => [1, 2, 3, 4, 5, 6]
+
+assertArraysEqual(newResult, [1, 2, 3, 4, 5, 6]) // => pass
+assertArraysEqual(newResult, [1, 2, 3, [4], 5, 6]) // => fail
