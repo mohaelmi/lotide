@@ -5,9 +5,6 @@ const assertEqual = function(actual, expected) {
   } else if ((actual !== expected)) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
-  if ((actual != expected)) {
-    console.log(`🛑🛑🛑 Assertion Fialed: ${actual} != ${expected}`);
-  }
 
 };
 
