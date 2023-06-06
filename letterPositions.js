@@ -13,5 +13,6 @@ const letterPositions = (string) => {
   return positionObject;
 };
 
+console.log(letterPositions)
 
 module.exports = letterPositions

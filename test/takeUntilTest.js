@@ -1,13 +1,20 @@
 const takeUntil = require('../takeUntil')
-const assertArraysEqual = require('../assertArraysEqual')
+const assert = require('chai').assert
+
+describe("#takeUntil", () => {
+  it("returns [1, 2, 5, 7, 2] for [1, 2, 5, 7, 2, -1, 2, 4, 5]", () => {
+    const data = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+    let output = takeUntil(data, (v) => v < 0)
+    const expected = [1, 2, 5, 7, 2]
+    assert.deepEqual(output, expected)
+  })
+  it("returns string before comma for  ['I have', 'been', 'to', 'Hollywood', ',', 'last', 'month']", () => {
+    const data = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+    let output = takeUntil(data, x => x === ',');
+    const expected = [ "I've", 'been', 'to', 'Hollywood']
+    assert.deepEqual(output, expected)
+  })
 
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+})
 
-const sliceArr = takeUntil(data1, (v) => v < 0)
-assertArraysEqual(sliceArr, [1,2,5,7,2]) // => Pass
-
-const results2 = takeUntil(data2, x => x === ',');
-
-assertArraysEqual(results2, [ "I've", 'been', 'to', 'Hollywood' ]); // => Pass

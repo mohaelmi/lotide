@@ -1,17 +1,19 @@
 const map = require('../map')
-const assertArraysEqual = require('../assertArraysEqual')
-
+const assert = require('chai').assert
 
 const myCallBack = (item)=>{
   return item = item[0]
 } 
 
-const words = ["ground", "control", "to", "major", "tom"];
 
-const result = map(words, myCallBack)
-console.log(result)
+describe("#map", () => {
+  it("returns ['g', 'c', 't', 'm', 't'] for ['ground', 'control', 'to', 'major', 'tom']", () => {
+    const words = ["ground", "control", "to", "major", "tom"];
+    let output = map(words, myCallBack)
+    const expected = ['g', 'c', 't', 'm', 't']
+    assert.deepEqual(output, expected)
+  })
+
+})
 
 
-assertArraysEqual([ 'g', 'c', 't', 'm', 't' ], [ 'g', 'c', 't', 'm', 't' ]) // => Pass
-assertArraysEqual([ 'g', 'c', 't', 'm', 't' ], [ 'g', 'c', 't']) // => Pass
-assertArraysEqual([ 'g', 'c', 't', 'm', 't' ], [ 'g', 'c', 't', 'm', 't' ]) // => Fail

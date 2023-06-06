@@ -1,12 +1,22 @@
 const middle = require('../middle')
-const assertArraysEqual = require('../assertArraysEqual')
+const assert = require('chai').assert
 
-const evenArray = [4, 5, 3, 4];
-const oddArray = [4, 5, 3];
-const empty =  [];
+describe("#middle", () => {
+  it("returns [5, 3] for [4, 5, 3, 4]", () => {
+    let output = middle([4, 5, 3, 4])
+    const expected = [5, 3]
+    assert.deepEqual(output, expected)
+  })
+  it("returns 5 for [4, 5, 3]", () => {
+    let output = middle([4, 5, 3])
+    const expected = 5
+    assert.deepEqual(output, expected)
+  })
+  it("returns empty array for []", () => {
+    let output = middle([])
+    const expected = []
+    assert.deepEqual(output, expected)
+  })
 
-assertArraysEqual(middle(evenArray), [5, 3]); // => pass
-assertArraysEqual(middle(oddArray), 5); // => pass
-assertArraysEqual(middle(empty), []); // => pass
-assertArraysEqual(middle(evenArray), [5]); // => fail
-// console.log(middle(array)) // => []
+})
+

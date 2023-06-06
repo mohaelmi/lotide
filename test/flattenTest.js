@@ -1,9 +1,17 @@
 const flatten = require('../flatten')
-const assertArraysEqual = require('../assertArraysEqual')
+const assert = require('chai').assert
 
 
-let unflattedArray = [1, 2, [3, 4], 5, [6]]
-newResult = flatten(unflattedArray) // => [1, 2, 3, 4, 5, 6]
+describe("#flatten", () => {
+  it("returns [1, 2, 3, 4, 5, 6] for [1, 2, [3, 4], 5, [6]]", () => { 
+    let output = flatten([1, 2, [3, 4], 5, [6]])
+    const expected = [1, 2, 3, 4, 5, 6]
+    assert.deepEqual(output, expected)
+  })
 
-assertArraysEqual(newResult, [1, 2, 3, 4, 5, 6]) // => pass
-assertArraysEqual(newResult, [1, 2, 3, [4], 5, 6]) // => fail
+  it("returns [1, 2] for [1, 2]", () => { 
+    let output = flatten([1, 2])
+    const expected = [1, 2  ]
+    assert.deepEqual(output, expected)
+  })
+})

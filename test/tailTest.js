@@ -1,10 +1,18 @@
-const assertEqual = require('../assertEqual')
+const assert = require('chai').assert
 const tail = require('../tail')
 
 
+describe("#tail", () => {
+  it("returns [3, 4] for [2, 3, 4]", () => {
+    const array = [2, 3, 4]
+    let output = tail(array)
+    const expected = [3, 4]
+    assert.deepEqual(output, expected)
+  })
 
-const arr = [1,2,3];
-let result = tail(arr);
-console.log(result);
-assertEqual(result[0],  2);
-assertEqual(result[1],  3);
+  it("returns [] for [5]", () => {
+    const array = [5]
+    let output = tail(array)   
+    assert.deepEqual(output, [])
+  })
+})
