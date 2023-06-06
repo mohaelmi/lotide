@@ -1,11 +1,6 @@
-const assertEqual = require('./assertEqual')
-
 const tail = function(array) {
   return array.slice(1);
 };
 
-const arr = [1,2,3];
-let result = tail(arr);
-console.log(result);
-assertEqual(result[0],  2);
-assertEqual(result[1],  3);
+module.exports = tail
+

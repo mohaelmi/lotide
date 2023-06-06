@@ -1,6 +1,3 @@
-const assertEqual = require('./assertEqual')
-
-
 const countLetters = (string) => {
   const result = {}
   for(let character of string){
@@ -16,10 +13,6 @@ const countLetters = (string) => {
   return result;
 }
 
+module.exports = countLetters
 
-const countObject = countLetters("lighthouse in the house")
 
-assertEqual(countObject['l'],  1 ) // => pass
-assertEqual(countObject['h'],  4 ) // => pass
-assertEqual(countObject['u'],  1 ) // => fail
-console.log(countObject)

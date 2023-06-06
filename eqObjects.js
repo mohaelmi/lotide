@@ -25,6 +25,7 @@ const eqObjects = (object1, object2) => {
 
 
 
+module.exports = eqObjects
 
 const shirtObject = { color: ["red", "blue"], size: "medium" };
 const anotherShirtObject = { size: "medium", color: ["red", "blue"] };
