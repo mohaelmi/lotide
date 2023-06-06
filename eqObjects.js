@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual')
 const eqArrays = require('./eqArrays')
 
 
@@ -24,19 +23,9 @@ const eqObjects = (object1, object2) => {
 };
 
 
-
 module.exports = eqObjects
 
-const shirtObject = { color: ["red", "blue"], size: "medium" };
-const anotherShirtObject = { size: "medium", color: ["red", "blue"] };
-console.log(eqObjects(shirtObject, anotherShirtObject)); // => true
 
-const longSleeveShirtObject = { size: "medium", color: "red", sleeveLength: "long" };
-console.log(eqObjects(shirtObject , longSleeveShirtObject)); // => false
-
-// test cases
-assertEqual(eqObjects(shirtObject , anotherShirtObject), true); // => pass
-assertEqual(eqObjects(shirtObject, longSleeveShirtObject), false); // => pass
 
 
 

@@ -8,6 +8,5 @@ const map = (arr, callback) => {
   
 }
 
-console.log(map)
 
 module.exports = map
