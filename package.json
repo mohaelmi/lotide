@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@mohaelmi/lotide",
   "version": "1.0.0",
-  "description": "small library ",
+  "description": "mini clone of lodash library for learning purpose ",
   "main": "assertEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/mohaelmi/lotide.git"
   },
-  "author": "Moha",
+  "author": "Moha Elmi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mohaelmi/lotide/issues"
