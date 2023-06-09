@@ -2,7 +2,7 @@
   "name": "@mohaelmi/lotide",
   "version": "1.0.0",
   "description": "mini clone of lodash library for learning purpose ",
-  "main": "assertEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
